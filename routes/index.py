@@ -15,7 +15,7 @@ from .index import get_subdomains
 app = create_app()
 
 # Create a Blueprint instance
-API_KEY = "47N3WQjDpOfPvbGlItKgymROSgMV2w5g"
+API_KEY = ""
 BASE_URL = "https://api.securitytrails.com/v1"
 
 main = Blueprint('main', __name__)
