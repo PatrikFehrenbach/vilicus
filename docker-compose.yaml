@@ -10,3 +10,12 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=admin123
+
+  web:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongodb
+    environment:
+      - FLASK_RUN_HOST=0.0.0.0

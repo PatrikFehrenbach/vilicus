@@ -1,7 +1,7 @@
 # models.py
 from pymongo import MongoClient,DESCENDING
 
-client = MongoClient('mongodb://admin:admin123@localhost:27017/')
+client = MongoClient('mongodb://admin:admin123@mongodb:27017/')
 db = client['recon']
 domains_collection = db['domains']
 subdomains_collection = db['subdomains']
