@@ -13,11 +13,6 @@ import threading
 from .index import get_subdomains
 
 app = create_app()
-
-# Create a Blueprint instance
-API_KEY = ""
-BASE_URL = "https://api.securitytrails.com/v1"
-
 main = Blueprint('main', __name__)
 
 ALLOWED_EXTENSIONS = {'txt'}
