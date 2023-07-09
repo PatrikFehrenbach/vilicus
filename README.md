@@ -36,6 +36,13 @@ Follow these steps to install and run Vilicus:
 
 3. Visit the dashboard in your web browser.
 
+### Optional SecurityTrails integration
+
+   The tool has the ability to automatically query the (https://securitytrails.com/) Securitytrails API once a domain has been added. If youwant too enable this feature, you have to rename the `env.example` to `.env` and insert your own API Key. It is also recommended to rebuild the container like so `docker-compose build --no-cache` 
+
+<img width="1012" alt="Screenshot 2023-07-09 at 19 38 06" src="https://github.com/PatrikFehrenbach/vilicus/assets/9072595/9d527caa-5b25-4acb-9e29-1b6f28a94859">
+
+
 ## Contributing:
 
 Contributions are always welcome. If you find a bug or want to add a new feature, feel free to create a new issue or open a pull request.
