@@ -3,3 +3,4 @@ flask_executor
 pymongo
 tldextract
 apscheduler
+python-dotenv

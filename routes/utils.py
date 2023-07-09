@@ -2,8 +2,9 @@
 import requests
 import logging
 from models import Domain
+import os
 
-API_KEY = ""
+API_KEY = os.getenv("SECURITYTRAILS")
 BASE_URL = "https://api.securitytrails.com/v1"
 
 def get_subdomains(domain):
