@@ -14,8 +14,8 @@ services:
   web:
     build: .
     ports:
-      - 5000:5000
+      - 127.0.0.1:5000:5000  # Bind to localhost only
     depends_on:
       - mongodb
     environment:
-      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_HOST=0.0.0.0  # Listen on all interfaces
