@@ -13,11 +13,10 @@ app.register_blueprint(domain_blueprint)
 app.register_blueprint(subdomain_blueprint)
 
 scheduler = BackgroundScheduler()
-#scheduler.add_job(update_subdomains_task, 'interval', seconds=24)
+# scheduler.add_job(update_subdomains_task, 'interval', seconds=24)
 
 scheduler.start()
 print("Scheduler started!")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
-

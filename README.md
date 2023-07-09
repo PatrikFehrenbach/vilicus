@@ -65,9 +65,8 @@ Request Body:
 ```{ "name": "domain name" }```
 
 Responses:
-
-201: 'Domain added successfully!'
-400: 'No domain name provided'
+ - 201: 'Domain added successfully!'
+ - 400: 'No domain name provided'
 
 ---
 
@@ -80,10 +79,9 @@ Request Body:
 ```{ "name": "new domain name" }```
 
 Responses:
-
-200: 'Domain updated successfully!'
-400: 'No new domain name provided'
-404: 'Domain not found'
+ - 200: 'Domain updated successfully!'
+ - 400: 'No new domain name provided'
+ - 404: 'Domain not found'
 
 ---
 
@@ -92,9 +90,8 @@ Responses:
 Delete a specific domain by its name.
 
 Responses:
-
-200: 'Domain deleted successfully!'
-404: 'Domain not found'
+ - 200: 'Domain deleted successfully!'
+ - 404: 'Domain not found'
 
 ---
 
@@ -104,17 +101,17 @@ Export all domains.
 
 Responses:
 
-200: List of all domains
+ - 200: List of all domains
 
 ---
 
-### GET /domains/search
+### GET /domains/search?q=test
 
 Search domains by query. The query should be passed as a URL parameter.
 
 Responses:
 
-200: Search results
+ - 200: Search results
 
 ---
 
@@ -127,10 +124,10 @@ Request Body:
 ```{ "subdomain_name": "subdomain name" }```
 
 Responses:
-
-201: 'Subdomain added successfully!'
-400: 'No subdomain name provided'
-404: 'Main domain not found'
+ - 201: 'Subdomain added successfully!'
+ - 400: 'No subdomain name provided'
+ - 404: 'Main domain not found'
+ - 409: 'Conflict'
 
 ---
 
@@ -143,11 +140,10 @@ Request Body:
 ```{ "name": "new subdomain name" }```
 
 Responses:
-
-200: 'Subdomain updated successfully!'
-400: 'No new subdomain name provided'
-404: 'Main domain not found'
-404: 'Subdomain not found'
+ - 200: 'Subdomain updated successfully!'
+ - 400: 'No new subdomain name provided'
+ - 404: 'Main domain not found'
+ - 404: 'Subdomain not found'
 
 ---
 
@@ -156,10 +152,9 @@ Responses:
 Delete a specific subdomain for a specific domain.
 
 Responses:
-
-200: 'Subdomain deleted successfully!'
-404: 'Main domain not found'
-404: 'Subdomain not found'
+ - 200: 'Subdomain deleted successfully!'
+ - 404: 'Main domain not found'
+ - 404: 'Subdomain not found'
 
 ---
 
@@ -169,7 +164,7 @@ Export all subdomains.
 
 Responses:
 
-200: List of all subdomains
+ - 200: List of all subdomains
 
 ---
 
@@ -178,19 +173,18 @@ Responses:
 Export all subdomains of a specific domain.
 
 Responses:
-
-200: List of all subdomains of the specified domain
-404: 'Domain not found'
+ - 200: List of all subdomains of the specified domain
+ - 404: 'Domain not found'
 
 ---
 
-### GET /subdomains/search
+### GET /subdomains/search?q=test
 
 Search subdomains by query. The query should be passed as a URL parameter.
 
 Responses:
 
-200: Search results
+ - 200: Search results
 
 ---
 
@@ -200,7 +194,7 @@ Fetch all subdomains added in the last hour.
 
 Responses:
 
-200: List of all subdomains added in the last hour
+ - 200: List of all subdomains added in the last hour
 
 ---
 
@@ -210,4 +204,4 @@ Fetch all domains sorted by the count of their subdomains in descending order.
 
 Responses:
 
-200: List of all domains sorted by subdomains count
+ - 200: List of all domains sorted by subdomains count
