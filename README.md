@@ -144,7 +144,7 @@ Update the name of an existing subdomain for a specific domain. The request body
 
 Request Body:
 
-```{ "name": "new subdomain name" }``````
+```{ "name": "new subdomain name" }```
 
 Responses:
 
