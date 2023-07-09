@@ -30,22 +30,11 @@ Follow these steps to install and run Vilicus:
     ```
     
     Wait for Docker to pull the necessary images and start the services. This may take a while.
-
-3. In a new terminal window, install the required Python packages.
-
-    ```
-    python3 -m pip install -r requirements.txt
-    ```
-
-4. Start the Vilicus server.
-
-    ```
-    python3 run.py
-    ```
+    
 
     This will start the server and the application will be accessible at `localhost:5000` (or whatever port you've configured).
 
-5. Visit the dashboard in your web browser.
+3. Visit the dashboard in your web browser.
 
 ## Contributing:
 
