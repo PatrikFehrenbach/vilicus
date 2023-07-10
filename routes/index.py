@@ -62,6 +62,26 @@ def add_domain():
         return jsonify({'message': 'Domain added, but failed to get its subdomains'}), 201
 
 
+@main.route('/add_domains', methods=['POST'])
+def add_domains():
+    names = request.json.get('names')
+    if not names:
+        return jsonify({'message': 'No domain names provided'}), 400
+
+    response = {}
+    for name in names:
+        domain = Domain(name)
+        domain.save()
+        try:
+            # Call the get_subdomains function
+            subdomains = get_subdomains(name)
+            logging.info(f'Subdomains added for {name}: {subdomains}')  # Log the added subdomains
+            response[name] = {'message': 'Domain and its subdomains added successfully!', 'subdomains': subdomains}
+        except Exception as e:
+            logging.error(f'Error while getting subdomains for {name}: {e}')
+            response[name] = {'message': 'Domain added, but failed to get its subdomains'}
+    return jsonify(response), 201
+
 
 @main.route('/reset', methods=['GET'])
 def reset_database():
@@ -149,8 +169,4 @@ def update_subdomains_task():
         # Get the subdomains from the API
         print("Getting subdomains for %s" % domain_object.name)
         subdomains = get_subdomains(domain_object.name)
-
-
-
-
 
