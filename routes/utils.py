@@ -31,9 +31,7 @@ def get_subdomains(domain):
         total_pages = data.get("meta", {}).get("total_pages")
 
         if scroll_id and total_pages:
-            if total_pages > 10:
-                total_pages = 10 # Limit to 200 pages
-            current_page = 1  # We already got the first page
+            current_page = 1
             while current_page < total_pages:
                 url = f"{BASE_URL}/scroll/{scroll_id}"
                 response = requests.get(url, headers=headers)

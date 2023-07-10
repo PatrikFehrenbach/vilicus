@@ -14,6 +14,7 @@ def add_domain():
     domain.save()
     return 'Domain added successfully!', 201
 
+
 @main.route('/update_domain/<string:domain_name>', methods=['POST'])
 def update_domain(domain_name):
     new_name = request.json.get('name')
